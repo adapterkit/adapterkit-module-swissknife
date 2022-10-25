@@ -1,0 +1,26 @@
+syntax = "proto3";
+option go_package = "./;swissknife";
+package pmg_tools.adapterkit_module_swissknife;
+
+service SwissknifeSvc {
+  rpc ConvHexa(ConvHexa.Request) returns (ConvHexa.Response) {};
+  rpc ConvBase64(ConvBase64.Request) returns (ConvBase64.Response) {};
+}
+
+message ConvHexa {
+  message Request {
+    string input = 1;
+  }
+  message Response {
+    string output = 1;
+  }
+}
+
+message ConvBase64 {
+  message Request {
+    string input = 1;
+  }
+  message Response {
+    string output = 1;
+  }
+}
