@@ -10,14 +10,14 @@ type Service struct {
 	UnimplementedSwissknifeSvcServer
 }
 
-func (s *Service) ConvHexa(_ context.Context, req *ConvHexa_Request) (*ConvHexa_Response, error) {
+func (s *Service) ConvHexa(_ context.Context, req *ConvHexaReq) (*ConvHexaRes, error) {
 	in := req.GetInput()
 	out := hex.EncodeToString([]byte(in))
-	return &ConvHexa_Response{Output: out}, nil
+	return &ConvHexaRes{Output: out}, nil
 }
 
-func (s *Service) ConvBase64(_ context.Context, req *ConvBase64_Request) (*ConvBase64_Response, error) {
+func (s *Service) ConvBase64(_ context.Context, req *ConvBase64Req) (*ConvBase64Res, error) {
 	in := req.GetInput()
 	out := base64.StdEncoding.EncodeToString([]byte(in))
-	return &ConvBase64_Response{Output: out}, nil
+	return &ConvBase64Res{Output: out}, nil
 }

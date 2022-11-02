@@ -49,7 +49,7 @@ func TestSwissknifeSvcConvHexa_grpc(t *testing.T) {
 	}
 
 	for _, p := range patient {
-		req := &swissknife.ConvHexa_Request{Input: p.input}
+		req := &swissknife.ConvHexaReq{Input: p.input}
 		resp, err := client.ConvHexa(ctx, req)
 		if err != nil {
 			t.Fatal(err)
@@ -81,7 +81,7 @@ func TestSwissknifeSvcConvBase64_grpc(t *testing.T) {
 	}
 
 	for _, p := range patient {
-		req := &swissknife.ConvBase64_Request{Input: p.input}
+		req := &swissknife.ConvBase64Req{Input: p.input}
 		resp, err := client.ConvBase64(ctx, req)
 		if err != nil {
 			t.Fatal(err)
