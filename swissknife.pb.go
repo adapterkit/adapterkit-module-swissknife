@@ -20,14 +20,16 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ConvHexa struct {
+type ConvHexaReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	Input string `protobuf:"bytes,1,opt,name=input,proto3" json:"input,omitempty"`
 }
 
-func (x *ConvHexa) Reset() {
-	*x = ConvHexa{}
+func (x *ConvHexaReq) Reset() {
+	*x = ConvHexaReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_swissknife_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -35,13 +37,13 @@ func (x *ConvHexa) Reset() {
 	}
 }
 
-func (x *ConvHexa) String() string {
+func (x *ConvHexaReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConvHexa) ProtoMessage() {}
+func (*ConvHexaReq) ProtoMessage() {}
 
-func (x *ConvHexa) ProtoReflect() protoreflect.Message {
+func (x *ConvHexaReq) ProtoReflect() protoreflect.Message {
 	mi := &file_swissknife_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -53,19 +55,28 @@ func (x *ConvHexa) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConvHexa.ProtoReflect.Descriptor instead.
-func (*ConvHexa) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConvHexaReq.ProtoReflect.Descriptor instead.
+func (*ConvHexaReq) Descriptor() ([]byte, []int) {
 	return file_swissknife_proto_rawDescGZIP(), []int{0}
 }
 
-type ConvBase64 struct {
+func (x *ConvHexaReq) GetInput() string {
+	if x != nil {
+		return x.Input
+	}
+	return ""
+}
+
+type ConvHexaRes struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
+
+	Output string `protobuf:"bytes,1,opt,name=output,proto3" json:"output,omitempty"`
 }
 
-func (x *ConvBase64) Reset() {
-	*x = ConvBase64{}
+func (x *ConvHexaRes) Reset() {
+	*x = ConvHexaRes{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_swissknife_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -73,13 +84,13 @@ func (x *ConvBase64) Reset() {
 	}
 }
 
-func (x *ConvBase64) String() string {
+func (x *ConvHexaRes) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConvBase64) ProtoMessage() {}
+func (*ConvHexaRes) ProtoMessage() {}
 
-func (x *ConvBase64) ProtoReflect() protoreflect.Message {
+func (x *ConvHexaRes) ProtoReflect() protoreflect.Message {
 	mi := &file_swissknife_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -91,12 +102,19 @@ func (x *ConvBase64) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConvBase64.ProtoReflect.Descriptor instead.
-func (*ConvBase64) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConvHexaRes.ProtoReflect.Descriptor instead.
+func (*ConvHexaRes) Descriptor() ([]byte, []int) {
 	return file_swissknife_proto_rawDescGZIP(), []int{1}
 }
 
-type ConvHexa_Request struct {
+func (x *ConvHexaRes) GetOutput() string {
+	if x != nil {
+		return x.Output
+	}
+	return ""
+}
+
+type ConvBase64Req struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -104,8 +122,8 @@ type ConvHexa_Request struct {
 	Input string `protobuf:"bytes,1,opt,name=input,proto3" json:"input,omitempty"`
 }
 
-func (x *ConvHexa_Request) Reset() {
-	*x = ConvHexa_Request{}
+func (x *ConvBase64Req) Reset() {
+	*x = ConvBase64Req{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_swissknife_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -113,13 +131,13 @@ func (x *ConvHexa_Request) Reset() {
 	}
 }
 
-func (x *ConvHexa_Request) String() string {
+func (x *ConvBase64Req) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConvHexa_Request) ProtoMessage() {}
+func (*ConvBase64Req) ProtoMessage() {}
 
-func (x *ConvHexa_Request) ProtoReflect() protoreflect.Message {
+func (x *ConvBase64Req) ProtoReflect() protoreflect.Message {
 	mi := &file_swissknife_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -131,19 +149,19 @@ func (x *ConvHexa_Request) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConvHexa_Request.ProtoReflect.Descriptor instead.
-func (*ConvHexa_Request) Descriptor() ([]byte, []int) {
-	return file_swissknife_proto_rawDescGZIP(), []int{0, 0}
+// Deprecated: Use ConvBase64Req.ProtoReflect.Descriptor instead.
+func (*ConvBase64Req) Descriptor() ([]byte, []int) {
+	return file_swissknife_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ConvHexa_Request) GetInput() string {
+func (x *ConvBase64Req) GetInput() string {
 	if x != nil {
 		return x.Input
 	}
 	return ""
 }
 
-type ConvHexa_Response struct {
+type ConvBase64Res struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -151,8 +169,8 @@ type ConvHexa_Response struct {
 	Output string `protobuf:"bytes,1,opt,name=output,proto3" json:"output,omitempty"`
 }
 
-func (x *ConvHexa_Response) Reset() {
-	*x = ConvHexa_Response{}
+func (x *ConvBase64Res) Reset() {
+	*x = ConvBase64Res{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_swissknife_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -160,13 +178,13 @@ func (x *ConvHexa_Response) Reset() {
 	}
 }
 
-func (x *ConvHexa_Response) String() string {
+func (x *ConvBase64Res) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConvHexa_Response) ProtoMessage() {}
+func (*ConvBase64Res) ProtoMessage() {}
 
-func (x *ConvHexa_Response) ProtoReflect() protoreflect.Message {
+func (x *ConvBase64Res) ProtoReflect() protoreflect.Message {
 	mi := &file_swissknife_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -178,106 +196,12 @@ func (x *ConvHexa_Response) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConvHexa_Response.ProtoReflect.Descriptor instead.
-func (*ConvHexa_Response) Descriptor() ([]byte, []int) {
-	return file_swissknife_proto_rawDescGZIP(), []int{0, 1}
+// Deprecated: Use ConvBase64Res.ProtoReflect.Descriptor instead.
+func (*ConvBase64Res) Descriptor() ([]byte, []int) {
+	return file_swissknife_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ConvHexa_Response) GetOutput() string {
-	if x != nil {
-		return x.Output
-	}
-	return ""
-}
-
-type ConvBase64_Request struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Input string `protobuf:"bytes,1,opt,name=input,proto3" json:"input,omitempty"`
-}
-
-func (x *ConvBase64_Request) Reset() {
-	*x = ConvBase64_Request{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_swissknife_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ConvBase64_Request) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConvBase64_Request) ProtoMessage() {}
-
-func (x *ConvBase64_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_swissknife_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConvBase64_Request.ProtoReflect.Descriptor instead.
-func (*ConvBase64_Request) Descriptor() ([]byte, []int) {
-	return file_swissknife_proto_rawDescGZIP(), []int{1, 0}
-}
-
-func (x *ConvBase64_Request) GetInput() string {
-	if x != nil {
-		return x.Input
-	}
-	return ""
-}
-
-type ConvBase64_Response struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Output string `protobuf:"bytes,1,opt,name=output,proto3" json:"output,omitempty"`
-}
-
-func (x *ConvBase64_Response) Reset() {
-	*x = ConvBase64_Response{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_swissknife_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ConvBase64_Response) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConvBase64_Response) ProtoMessage() {}
-
-func (x *ConvBase64_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_swissknife_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConvBase64_Response.ProtoReflect.Descriptor instead.
-func (*ConvBase64_Response) Descriptor() ([]byte, []int) {
-	return file_swissknife_proto_rawDescGZIP(), []int{1, 1}
-}
-
-func (x *ConvBase64_Response) GetOutput() string {
+func (x *ConvBase64Res) GetOutput() string {
 	if x != nil {
 		return x.Output
 	}
@@ -288,39 +212,25 @@ var File_swissknife_proto protoreflect.FileDescriptor
 
 var file_swissknife_proto_rawDesc = []byte{
 	0x0a, 0x10, 0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x12, 0x26, 0x70, 0x6d, 0x67, 0x5f, 0x74, 0x6f, 0x6f, 0x6c, 0x73, 0x2e, 0x61, 0x64,
-	0x61, 0x70, 0x74, 0x65, 0x72, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x5f,
-	0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x22, 0x4f, 0x0a, 0x08, 0x43, 0x6f,
-	0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x1a, 0x1f, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x1a, 0x22, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x22, 0x51, 0x0a, 0x0a, 0x43,
-	0x6f, 0x6e, 0x76, 0x42, 0x61, 0x73, 0x65, 0x36, 0x34, 0x1a, 0x1f, 0x0a, 0x07, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x1a, 0x22, 0x0a, 0x08, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x32, 0x9d,
-	0x02, 0x0a, 0x0d, 0x53, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x53, 0x76, 0x63,
-	0x12, 0x81, 0x01, 0x0a, 0x08, 0x43, 0x6f, 0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x12, 0x38, 0x2e,
-	0x70, 0x6d, 0x67, 0x5f, 0x74, 0x6f, 0x6f, 0x6c, 0x73, 0x2e, 0x61, 0x64, 0x61, 0x70, 0x74, 0x65,
-	0x72, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x5f, 0x73, 0x77, 0x69, 0x73,
-	0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x2e,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x70, 0x6d, 0x67, 0x5f, 0x74, 0x6f,
-	0x6f, 0x6c, 0x73, 0x2e, 0x61, 0x64, 0x61, 0x70, 0x74, 0x65, 0x72, 0x6b, 0x69, 0x74, 0x5f, 0x6d,
-	0x6f, 0x64, 0x75, 0x6c, 0x65, 0x5f, 0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65,
-	0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x87, 0x01, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61, 0x73,
-	0x65, 0x36, 0x34, 0x12, 0x3a, 0x2e, 0x70, 0x6d, 0x67, 0x5f, 0x74, 0x6f, 0x6f, 0x6c, 0x73, 0x2e,
-	0x61, 0x64, 0x61, 0x70, 0x74, 0x65, 0x72, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x75, 0x6c,
-	0x65, 0x5f, 0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x2e, 0x43, 0x6f, 0x6e,
-	0x76, 0x42, 0x61, 0x73, 0x65, 0x36, 0x34, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x3b, 0x2e, 0x70, 0x6d, 0x67, 0x5f, 0x74, 0x6f, 0x6f, 0x6c, 0x73, 0x2e, 0x61, 0x64, 0x61, 0x70,
-	0x74, 0x65, 0x72, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x5f, 0x73, 0x77,
-	0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61, 0x73,
-	0x65, 0x36, 0x34, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0f,
-	0x5a, 0x0d, 0x2e, 0x2f, 0x3b, 0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x6f, 0x22, 0x23, 0x0a, 0x0b, 0x43, 0x6f, 0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x52, 0x65,
+	0x71, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x22, 0x25, 0x0a, 0x0b, 0x43, 0x6f, 0x6e, 0x76, 0x48,
+	0x65, 0x78, 0x61, 0x52, 0x65, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x22, 0x25,
+	0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61, 0x73, 0x65, 0x36, 0x34, 0x52, 0x65, 0x71, 0x12,
+	0x14, 0x0a, 0x05, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x69, 0x6e, 0x70, 0x75, 0x74, 0x22, 0x27, 0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61, 0x73,
+	0x65, 0x36, 0x34, 0x52, 0x65, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x32, 0x69,
+	0x0a, 0x0d, 0x53, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x53, 0x76, 0x63, 0x12,
+	0x28, 0x0a, 0x08, 0x43, 0x6f, 0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x12, 0x0c, 0x2e, 0x43, 0x6f,
+	0x6e, 0x76, 0x48, 0x65, 0x78, 0x61, 0x52, 0x65, 0x71, 0x1a, 0x0c, 0x2e, 0x43, 0x6f, 0x6e, 0x76,
+	0x48, 0x65, 0x78, 0x61, 0x52, 0x65, 0x73, 0x22, 0x00, 0x12, 0x2e, 0x0a, 0x0a, 0x43, 0x6f, 0x6e,
+	0x76, 0x42, 0x61, 0x73, 0x65, 0x36, 0x34, 0x12, 0x0e, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61,
+	0x73, 0x65, 0x36, 0x34, 0x52, 0x65, 0x71, 0x1a, 0x0e, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x42, 0x61,
+	0x73, 0x65, 0x36, 0x34, 0x52, 0x65, 0x73, 0x22, 0x00, 0x42, 0x0f, 0x5a, 0x0d, 0x2e, 0x2f, 0x3b,
+	0x73, 0x77, 0x69, 0x73, 0x73, 0x6b, 0x6e, 0x69, 0x66, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -335,20 +245,18 @@ func file_swissknife_proto_rawDescGZIP() []byte {
 	return file_swissknife_proto_rawDescData
 }
 
-var file_swissknife_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_swissknife_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_swissknife_proto_goTypes = []interface{}{
-	(*ConvHexa)(nil),            // 0: pmg_tools.adapterkit_module_swissknife.ConvHexa
-	(*ConvBase64)(nil),          // 1: pmg_tools.adapterkit_module_swissknife.ConvBase64
-	(*ConvHexa_Request)(nil),    // 2: pmg_tools.adapterkit_module_swissknife.ConvHexa.Request
-	(*ConvHexa_Response)(nil),   // 3: pmg_tools.adapterkit_module_swissknife.ConvHexa.Response
-	(*ConvBase64_Request)(nil),  // 4: pmg_tools.adapterkit_module_swissknife.ConvBase64.Request
-	(*ConvBase64_Response)(nil), // 5: pmg_tools.adapterkit_module_swissknife.ConvBase64.Response
+	(*ConvHexaReq)(nil),   // 0: ConvHexaReq
+	(*ConvHexaRes)(nil),   // 1: ConvHexaRes
+	(*ConvBase64Req)(nil), // 2: ConvBase64Req
+	(*ConvBase64Res)(nil), // 3: ConvBase64Res
 }
 var file_swissknife_proto_depIdxs = []int32{
-	2, // 0: pmg_tools.adapterkit_module_swissknife.SwissknifeSvc.ConvHexa:input_type -> pmg_tools.adapterkit_module_swissknife.ConvHexa.Request
-	4, // 1: pmg_tools.adapterkit_module_swissknife.SwissknifeSvc.ConvBase64:input_type -> pmg_tools.adapterkit_module_swissknife.ConvBase64.Request
-	3, // 2: pmg_tools.adapterkit_module_swissknife.SwissknifeSvc.ConvHexa:output_type -> pmg_tools.adapterkit_module_swissknife.ConvHexa.Response
-	5, // 3: pmg_tools.adapterkit_module_swissknife.SwissknifeSvc.ConvBase64:output_type -> pmg_tools.adapterkit_module_swissknife.ConvBase64.Response
+	0, // 0: SwissknifeSvc.ConvHexa:input_type -> ConvHexaReq
+	2, // 1: SwissknifeSvc.ConvBase64:input_type -> ConvBase64Req
+	1, // 2: SwissknifeSvc.ConvHexa:output_type -> ConvHexaRes
+	3, // 3: SwissknifeSvc.ConvBase64:output_type -> ConvBase64Res
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -363,7 +271,7 @@ func file_swissknife_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_swissknife_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvHexa); i {
+			switch v := v.(*ConvHexaReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -375,7 +283,7 @@ func file_swissknife_proto_init() {
 			}
 		}
 		file_swissknife_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvBase64); i {
+			switch v := v.(*ConvHexaRes); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -387,7 +295,7 @@ func file_swissknife_proto_init() {
 			}
 		}
 		file_swissknife_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvHexa_Request); i {
+			switch v := v.(*ConvBase64Req); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -399,31 +307,7 @@ func file_swissknife_proto_init() {
 			}
 		}
 		file_swissknife_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvHexa_Response); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_swissknife_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvBase64_Request); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_swissknife_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConvBase64_Response); i {
+			switch v := v.(*ConvBase64Res); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -441,7 +325,7 @@ func file_swissknife_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_swissknife_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

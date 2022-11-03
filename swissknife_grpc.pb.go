@@ -22,8 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SwissknifeSvcClient interface {
-	ConvHexa(ctx context.Context, in *ConvHexa_Request, opts ...grpc.CallOption) (*ConvHexa_Response, error)
-	ConvBase64(ctx context.Context, in *ConvBase64_Request, opts ...grpc.CallOption) (*ConvBase64_Response, error)
+	ConvHexa(ctx context.Context, in *ConvHexaReq, opts ...grpc.CallOption) (*ConvHexaRes, error)
+	ConvBase64(ctx context.Context, in *ConvBase64Req, opts ...grpc.CallOption) (*ConvBase64Res, error)
 }
 
 type swissknifeSvcClient struct {
@@ -34,18 +34,18 @@ func NewSwissknifeSvcClient(cc grpc.ClientConnInterface) SwissknifeSvcClient {
 	return &swissknifeSvcClient{cc}
 }
 
-func (c *swissknifeSvcClient) ConvHexa(ctx context.Context, in *ConvHexa_Request, opts ...grpc.CallOption) (*ConvHexa_Response, error) {
-	out := new(ConvHexa_Response)
-	err := c.cc.Invoke(ctx, "/pmg_tools.adapterkit_module_swissknife.SwissknifeSvc/ConvHexa", in, out, opts...)
+func (c *swissknifeSvcClient) ConvHexa(ctx context.Context, in *ConvHexaReq, opts ...grpc.CallOption) (*ConvHexaRes, error) {
+	out := new(ConvHexaRes)
+	err := c.cc.Invoke(ctx, "/SwissknifeSvc/ConvHexa", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *swissknifeSvcClient) ConvBase64(ctx context.Context, in *ConvBase64_Request, opts ...grpc.CallOption) (*ConvBase64_Response, error) {
-	out := new(ConvBase64_Response)
-	err := c.cc.Invoke(ctx, "/pmg_tools.adapterkit_module_swissknife.SwissknifeSvc/ConvBase64", in, out, opts...)
+func (c *swissknifeSvcClient) ConvBase64(ctx context.Context, in *ConvBase64Req, opts ...grpc.CallOption) (*ConvBase64Res, error) {
+	out := new(ConvBase64Res)
+	err := c.cc.Invoke(ctx, "/SwissknifeSvc/ConvBase64", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,8 +56,8 @@ func (c *swissknifeSvcClient) ConvBase64(ctx context.Context, in *ConvBase64_Req
 // All implementations must embed UnimplementedSwissknifeSvcServer
 // for forward compatibility
 type SwissknifeSvcServer interface {
-	ConvHexa(context.Context, *ConvHexa_Request) (*ConvHexa_Response, error)
-	ConvBase64(context.Context, *ConvBase64_Request) (*ConvBase64_Response, error)
+	ConvHexa(context.Context, *ConvHexaReq) (*ConvHexaRes, error)
+	ConvBase64(context.Context, *ConvBase64Req) (*ConvBase64Res, error)
 	mustEmbedUnimplementedSwissknifeSvcServer()
 }
 
@@ -65,10 +65,10 @@ type SwissknifeSvcServer interface {
 type UnimplementedSwissknifeSvcServer struct {
 }
 
-func (UnimplementedSwissknifeSvcServer) ConvHexa(context.Context, *ConvHexa_Request) (*ConvHexa_Response, error) {
+func (UnimplementedSwissknifeSvcServer) ConvHexa(context.Context, *ConvHexaReq) (*ConvHexaRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvHexa not implemented")
 }
-func (UnimplementedSwissknifeSvcServer) ConvBase64(context.Context, *ConvBase64_Request) (*ConvBase64_Response, error) {
+func (UnimplementedSwissknifeSvcServer) ConvBase64(context.Context, *ConvBase64Req) (*ConvBase64Res, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvBase64 not implemented")
 }
 func (UnimplementedSwissknifeSvcServer) mustEmbedUnimplementedSwissknifeSvcServer() {}
@@ -85,7 +85,7 @@ func RegisterSwissknifeSvcServer(s grpc.ServiceRegistrar, srv SwissknifeSvcServe
 }
 
 func _SwissknifeSvc_ConvHexa_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConvHexa_Request)
+	in := new(ConvHexaReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -94,16 +94,16 @@ func _SwissknifeSvc_ConvHexa_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pmg_tools.adapterkit_module_swissknife.SwissknifeSvc/ConvHexa",
+		FullMethod: "/SwissknifeSvc/ConvHexa",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwissknifeSvcServer).ConvHexa(ctx, req.(*ConvHexa_Request))
+		return srv.(SwissknifeSvcServer).ConvHexa(ctx, req.(*ConvHexaReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _SwissknifeSvc_ConvBase64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConvBase64_Request)
+	in := new(ConvBase64Req)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -112,10 +112,10 @@ func _SwissknifeSvc_ConvBase64_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pmg_tools.adapterkit_module_swissknife.SwissknifeSvc/ConvBase64",
+		FullMethod: "/SwissknifeSvc/ConvBase64",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwissknifeSvcServer).ConvBase64(ctx, req.(*ConvBase64_Request))
+		return srv.(SwissknifeSvcServer).ConvBase64(ctx, req.(*ConvBase64Req))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -124,7 +124,7 @@ func _SwissknifeSvc_ConvBase64_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SwissknifeSvc_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pmg_tools.adapterkit_module_swissknife.SwissknifeSvc",
+	ServiceName: "SwissknifeSvc",
 	HandlerType: (*SwissknifeSvcServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
